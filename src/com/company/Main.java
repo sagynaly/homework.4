@@ -7,10 +7,10 @@ public class Main {
     public static int bossHealth = 800;
     public static int bossDamage = 50;
     public static String bossDefence = "";
-    public static int[] heroesHealth = {260, 250, 270, 350, 100, 300, 280};
-    public static int[] heroesDamage = {15, 20, 10, 0, 10, 25, 15};
+    public static int[] heroesHealth = {260, 250, 270, 350, 100, 300, 280,400};
+    public static int[] heroesDamage = {15, 20, 10, 0, 10, 25, 15, 5};
     public static String[] heroesAttackType = {
-            "Physical", "Magical", "Kinetic", "Medical", "Lucky", "Thor", "Berserk"};
+            "Physical", "Magical", "Kinetic", "Medical", "Lucky", "Thor", "Berserk", "Golem"};
     public static int MedicSupport = randHealth();
 
     public static void main(String[] args) {
@@ -32,6 +32,7 @@ public class Main {
         heroesHit();
         lucky();
         Thor();
+        Golem();
         Berserk();
         printStatistics();
         BossIsBack();
@@ -211,4 +212,15 @@ public class Main {
             heroesHealth[6] = 0;
         }
     }
+    public static void Golem (){
+        Random random = new Random();
+        int Random = random.nextInt(3) + 1;
+        for (int i = 0; i < heroesHealth.length; i++) {
+            heroesHealth[i] = heroesHealth[i] + 12;
+        }
+        heroesHealth[7] = heroesHealth[7] - 72;
+        System.out.println("Golem исползовал супер спасобность");
+
+    }
+
 }
